@@ -25,11 +25,11 @@ export var getTrackCSS = function(spec) {
   var style = {
     opacity: 1,
     width: trackWidth,
-    WebkitTransform: 'translate3d(' + spec.left + 'px, 0px, 0px)',
-    transform: 'translate3d(' + spec.left + 'px, 0px, 0px)',
+    WebkitTransform: 'translate3d(' + (spec.left%trackWidth) + 'px, 0px, 0px)',
+    transform: 'translate3d(' + (spec.left%trackWidth) + 'px, 0px, 0px)',
     transition: '',
     WebkitTransition: '',
-    msTransform: 'translateX(' + spec.left + 'px)'
+    msTransform: 'translateX(' + (spec.left%trackWidth) + 'px)'
   };
 
   // Fallback for IE8
